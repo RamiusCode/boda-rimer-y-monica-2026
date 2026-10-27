@@ -1,6 +1,6 @@
-# Boda Betzabe & Jhon — 21 de noviembre de 2026
+# Boda Rimer & Mónica — 21 y 22 de noviembre de 2026
 
-Invitación digital de la boda de **Betzabe Mamani Fuentes** y **Jhon Alex Yelma Gutiérrez**.
+Invitación digital de la boda de **Rimer** y **Mónica**.
 Hecha con Astro, Tailwind y GSAP.
 
 ## Comandos
