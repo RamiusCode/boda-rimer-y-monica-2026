@@ -5,24 +5,6 @@
 <section class="py-2 px-4">
   <div class="max-w-2xl mx-auto text-center relative">
     
-    <!-- 🍃 HOJA IZQUIERDA - PEGADA AL BORDE -->
-    <div class="absolute left-0 top-1/2 -translate-y-3/5 w-16 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="hoja-fecha-izq">
-      <img
-        src="/imagenes/Hojas.webp"
-        alt="Hoja izquierda"
-        class="w-full h-auto object-contain transform -scale-x-100"
-      />
-    </div>
-
-    <!-- 🍃 HOJA DERECHA - PEGADA AL BORDE -->
-    <div class="absolute right-0 top-1/2 -translate-y-3/5 w-16 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="hoja-fecha-der">
-      <img
-        src="/imagenes/Hojas.webp"
-        alt="Hoja derecha"
-        class="w-full h-auto object-contain"
-      />
-    </div>
-    
     <!-- 🌸 Flores centrales arriba -->
     <div class="flex justify-center mb-6" id="flores-fecha">
       <img
@@ -32,13 +14,35 @@
       />
     </div>
 
+    <!-- Texto y fecha: las hojas se ubican respecto de este bloque, no de toda la sección,
+         para que no cambien de lugar mientras cargan las flores de arriba -->
+    <div class="relative">
+
+      <!-- 🍃 HOJA IZQUIERDA - PEGADA AL BORDE -->
+      <div class="absolute left-0 top-1/2 -translate-y-3/4 w-16 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="hoja-fecha-izq">
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja izquierda"
+          class="w-full h-auto object-contain transform -scale-x-100"
+        />
+      </div>
+  
+      <!-- 🍃 HOJA DERECHA - PEGADA AL BORDE -->
+      <div class="absolute right-0 top-1/2 -translate-y-3/4 w-16 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="hoja-fecha-der">
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja derecha"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
     <!-- 💍 Texto "Acompáñanos este día tan especial" -->
     <div class="mb-6" id="texto-invitacion-container">
       <div class="flex items-center justify-center px-4">
         
         <!-- 📝 TEXTO CENTRAL -->
         <div id="texto-invitacion" class="flex-shrink-0">
-          <p class="font-great-vibes text-3xl sm:text-3xl md:text-4xl text-[#C9A961] leading-relaxed text-center">
+          <p class="font-charm text-xl sm:text-2xl md:text-3xl text-[#C9A961] font-bold uppercase tracking-wide leading-relaxed text-center">
             Acompáñanos este día<br />tan especial
           </p>
         </div>
@@ -82,6 +86,7 @@
           2026
         </p>
       </div>
+    </div>
     </div>
 
   </div>
