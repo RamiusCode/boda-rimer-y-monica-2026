@@ -1,0 +1,110 @@
+---
+// Direccion.astro
+---
+<section class="py-8 px-4 relative">
+  <div class="max-w-xl mx-auto text-center relative">
+    
+    <!-- TÍTULO DIRECCIÓN -->
+    <div class="mb-4" id="titulo-direccion">
+      <h2
+        class="font-great-vibes text-4xl md:text-5xl text-[#C9A961]"
+      >
+        Recepción Social
+      </h2>
+    </div>
+
+    <!-- 🏛️ ICONO DIRECCIÓN CON FLORES EN LOS BORDES -->
+    <div class="relative mb-4" id="icono-direccion">
+      
+      <!-- 🌸 FLORES EN EL BORDE IZQUIERDO (PEGADA AL BORDE DEL CONTENEDOR) -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="flores-dir-izq">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas izquierda"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+      <!-- ICONO CENTRAL -->
+      <div class="flex justify-center">
+        <div
+          role="img"
+          aria-label="Icono de recepción"
+          class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 icono-recepcion"
+        ></div>
+      </div>
+
+      <!-- 🌸 FLORES EN EL BORDE DERECHO (PEGADA AL BORDE DEL CONTENEDOR) -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="flores-dir-der">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas derecha"
+          class="w-full h-auto object-contain scale-x-[-1]"
+        />
+      </div>
+
+    </div>
+    
+    <!-- INFORMACIÓN DE UBICACIÓN -->
+    <div class="mb-2" id="info-direccion">
+      <p
+        class="font-charm text-xl md:text-lg text-[#626a54] leading-relaxed mb-2"
+      >
+        <b class="text-[#C9A961] text-2xl md:text-3xl">Salón de Eventos “Los Laureles”</b><br />
+        Av. Albina Patiño Km. 15 y 1/2<br />
+        <span class="text-[#626a54] font-bold text-xl md:text-2xl">18:00 Hrs.</span>
+      </p>
+    </div>
+    
+    <!-- BOTÓN VER UBICACIÓN -->
+    <div class="flex justify-center" id="boton-ubicacion">
+    <a
+        href="https://maps.app.goo.gl/n8D2QaDheig4gBg1A"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        <img
+        src="/imagenes/VerUbicacion.webp"
+        alt="Ver ubicación en el mapa"
+        class="w-56 md:w-56 lg:w-64 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+        />
+    </a>
+    </div>
+
+
+  </div>
+</section>
+
+<script>
+  import { entrada } from "../scripts/entrada";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#titulo-direccion",
+      pasos: [
+        ["#titulo-direccion", "izq"],
+        ["#icono-direccion", "centro"],
+        ["#flores-dir-izq", "izq"],
+        ["#flores-dir-der", "der"],
+        ["#info-direccion", "der"],
+        ["#boton-ubicacion", "abajo"],
+      ],
+    });
+  });
+</script>
+
+<style>
+  /* Asegurar que las flores en los bordes tengan movimiento fluido */
+  .flores-borde-izq,
+  .flores-borde-der {
+    will-change: transform;
+    transition: all 0.3s ease;
+  }
+
+  /* Icono de recepción pintado con el dorado de "Recepción Social" */
+  .icono-recepcion {
+    background-color: #C9A961;
+    -webkit-mask: url("/imagenes/rece.png") center / contain no-repeat;
+    mask: url("/imagenes/rece.png") center / contain no-repeat;
+  }
+</style>

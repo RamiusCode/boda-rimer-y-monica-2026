@@ -1,0 +1,283 @@
+---
+// Itinerario.astro
+---
+
+<section class="py-8 lg:py-20 px-4 relative overflow-hidden">
+  <!-- Fondo sutil con textura -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#fffaf5]/40 via-[#fff9f0]/20 to-[#fffaf5]/40 z-0"></div>
+
+  <div class="max-w-5xl mx-auto relative z-10">
+
+    <div class="max-w-3xl mx-auto relative">
+
+      <!-- 🍃 HOJA IZQUIERDA - PEGADA AL BORDE Y CENTRADA VERTICALMENTE -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8 z-20" id="hoja-itinerario-izq">
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja izquierda"
+          class="w-full h-auto object-contain transform -scale-x-100"
+        />
+      </div>
+
+      <!-- 🍃 HOJA DERECHA - PEGADA AL BORDE Y CENTRADA VERTICALMENTE -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8 z-20" id="hoja-itinerario-der">
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja derecha"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+      <!-- 🌸 FLORES DECORATIVAS ARRIBA -->
+      <div class="flex justify-center mb-4" id="flores-itinerario">
+        <img
+          src="/imagenes/Separadores.webp"
+          alt="Flores decorativas"
+          class="w-32 md:w-40 lg:w-48 h-auto opacity-90"
+        />
+      </div>
+
+      <!-- TÍTULO -->
+      <div class="text-center mb-8" id="titulo-itinerario">
+        <h2 class="font-charm text-2xl md:text-3xl lg:text-3xl text-[#C9A961] font-bold mb-4">
+          ITINERARIO
+        </h2>
+        <!-- Línea decorativa -->
+        <div class="flex items-center justify-center gap-3">
+          <div class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#C9A961]"></div>
+          <div class="w-2 h-2 rounded-full bg-[#C9A961]"></div>
+          <div class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#C9A961]"></div>
+        </div>
+      </div>
+
+      <!-- TIMELINE CONTAINER -->
+      <div class="relative px-4 md:px-8">
+        
+        <!-- Línea vertical CENTRAL con degradado mejorado -->
+        <div class="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[3px] bg-gradient-to-b from-[#C9A961] via-[#d4b16e] to-[#C9A961] rounded-full shadow-sm" id="linea-central"></div>
+
+        <!-- EVENTOS DEL ITINERARIO -->
+        <div class="space-y-1" id="eventos-container">
+
+          <!-- ❤️ CORAZÓN 1 -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 1: Ceremonia Religiosa y Civil (IMAGEN IZQ - TEXTO DER) -->
+          <div class="evento-item grid grid-cols-2 gap-6 md:gap-10 py-2">
+            <!-- IMAGEN IZQUIERDA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-izq">
+              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform transition-transform duration-300 hover:scale-110">
+                <div role="img" aria-label="Ceremonia Religiosa y Civil" class="w-full h-full drop-shadow-md icono-dorado" style="-webkit-mask-image: url('/imagenes/iglesia.png'); mask-image: url('/imagenes/iglesia.png');"></div>
+              </div>
+            </div>
+            <!-- TEXTO DERECHA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 text-center texto-der">
+              <p class="font-charm text-xl md:text-base lg:text-lg text-[#C9A961] font-bold leading-tight">Ceremonia Religiosa y Civil</p>
+              <p class="font-charm text-xl md:text-sm text-[#626a54] mt-1">18:00 Hrs</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 2 -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 2: Recepción (TEXTO IZQ - IMAGEN DER) -->
+          <div class="evento-item grid grid-cols-2 gap-6 md:gap-10 py-2">
+            <!-- TEXTO IZQUIERDA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 text-center texto-izq">
+              <p class="font-charm text-xl md:text-base lg:text-lg text-[#C9A961] font-bold leading-tight">Recepción</p>
+              <p class="font-charm text-xl md:text-sm text-[#626a54] mt-1">19:00 Hrs</p>
+            </div>
+            <!-- IMAGEN DERECHA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-der">
+              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform transition-transform duration-300 hover:scale-110">
+                <div role="img" aria-label="Recepción" class="w-full h-full drop-shadow-md icono-dorado" style="-webkit-mask-image: url('/imagenes/recepcion.png'); mask-image: url('/imagenes/recepcion.png');"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 3 -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 3: Entrada y Vals (IMAGEN IZQ - TEXTO DER) -->
+          <div class="evento-item grid grid-cols-2 gap-6 md:gap-10 py-2">
+            <!-- IMAGEN IZQUIERDA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-izq">
+              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform transition-transform duration-300 hover:scale-110">
+                <div role="img" aria-label="Entrada y Vals" class="w-full h-full drop-shadow-md icono-dorado" style="-webkit-mask-image: url('/imagenes/vals.png'); mask-image: url('/imagenes/vals.png');"></div>
+              </div>
+            </div>
+            <!-- TEXTO DERECHA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 text-center texto-der">
+              <p class="font-charm text-xl md:text-base lg:text-lg text-[#C9A961] font-bold leading-tight">Entrada y Vals</p>
+              <p class="font-charm text-xl md:text-sm text-[#626a54] mt-1">20:00 Hrs</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 4 -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 4: Cena (TEXTO IZQ - IMAGEN DER) -->
+          <div class="evento-item grid grid-cols-2 gap-6 md:gap-10 py-2">
+            <!-- TEXTO IZQUIERDA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 text-center texto-izq">
+              <p class="font-charm text-xl md:text-base lg:text-lg text-[#C9A961] font-bold leading-tight">Cena</p>
+              <p class="font-charm text-xl md:text-sm text-[#626a54] mt-1">21:00 Hrs</p>
+            </div>
+            <!-- IMAGEN DERECHA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-der">
+              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform transition-transform duration-300 hover:scale-110">
+                <div role="img" aria-label="Cena" class="w-full h-full drop-shadow-md icono-dorado" style="-webkit-mask-image: url('/imagenes/cen.png'); mask-image: url('/imagenes/cen.png');"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN 5 -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- EVENTO 5: Lanzamiento del Bouquet (IMAGEN IZQ - TEXTO DER) -->
+          <div class="evento-item grid grid-cols-2 gap-6 md:gap-10 py-2">
+            <!-- IMAGEN IZQUIERDA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 imagen-izq">
+              <div class="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 transform transition-transform duration-300 hover:scale-110">
+                <div role="img" aria-label="Lanzamiento del Bouquet" class="w-full h-full drop-shadow-md icono-dorado" style="-webkit-mask-image: url('/imagenes/ramo.png'); mask-image: url('/imagenes/ramo.png');"></div>
+              </div>
+            </div>
+            <!-- TEXTO DERECHA -->
+            <div class="flex flex-col items-center justify-center px-3 md:px-6 text-center texto-der">
+              <p class="font-charm text-xl md:text-base lg:text-lg text-[#C9A961] font-bold leading-tight">Lanzamiento del Bouquet</p>
+              <p class="font-charm text-xl md:text-sm text-[#626a54] mt-1">23:00 Hrs</p>
+            </div>
+          </div>
+
+          <!-- ❤️ CORAZÓN FINAL -->
+          <div class="flex justify-center py-2">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-[#C9A961] to-[#a88a4d] flex items-center justify-center relative z-10 corazon-item shadow-md">
+              <svg class="w-4 h-4 text-white" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  import { entrada } from "../scripts/entrada";
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#flores-itinerario",
+      pasos: [
+        ["#flores-itinerario", "arriba"],
+        ["#titulo-itinerario", "arriba"],
+        ["#hoja-itinerario-izq", "izq"],
+        ["#hoja-itinerario-der", "der"],
+        ["#linea-central", { scaleY: 0, transformOrigin: "top" }],
+        [".corazon-item", "centro", { stagger: 0.2 }],
+        [".imagen-izq", "izq", { stagger: 0.3 }],
+        [".texto-der", "der", { stagger: 0.3 }],
+        [".texto-izq", "izq", { stagger: 0.3 }],
+        [".imagen-der", "der", { stagger: 0.3 }],
+      ],
+      alMostrar: () => {
+        // Pulso sutil en corazones
+        gsap.to(".corazon-item", { scale: 1.08, duration: 2, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        // Hojas meciéndose apenas
+        gsap.to("#hoja-itinerario-izq", { y: -5, rotation: -2, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        gsap.to("#hoja-itinerario-der", { y: -5, rotation: 2, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1, delay: 0.2 });
+      },
+    });
+  });
+</script>
+
+<style>
+  /* Transiciones suaves para hover */
+  .evento-item p {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .evento-item:hover p:first-of-type {
+    color: #a88a4d;
+    transform: scale(1.08);
+    text-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+  }
+
+  /* Corazones con efecto de brillo elegante */
+  .corazon-item {
+    filter: drop-shadow(0 4px 12px rgba(201, 169, 97, 0.5));
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .corazon-item:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 8px 20px rgba(201, 169, 97, 0.7));
+  }
+
+  /* Mejora visual de imágenes */
+  img {
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.12));
+    transition: filter 0.3s ease;
+  }
+
+  img:hover {
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.18));
+  }
+
+  /* Animación sutil de brillo en la línea */
+  #linea-central {
+    box-shadow: 0 0 15px rgba(201, 169, 97, 0.3);
+  }
+
+  /* Hojas con transición suave */
+  #hoja-itinerario-izq,
+  #hoja-itinerario-der {
+    will-change: transform;
+  }
+
+  /* Iconos del itinerario pintados en dorado (misma técnica que en Dirección) */
+  .icono-dorado {
+    background-color: #C9A961;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+</style>

@@ -1,0 +1,163 @@
+---
+// Despedida.astro
+---
+<section class="py-4 px-4 relative overflow-hidden">
+  <div class="max-w-6xl mx-auto relative z-10">
+    <div class="max-w-4xl mx-auto text-center">
+
+      <!-- 🌸 FLORES SUPERIORES -->
+      <!-- <div class="flex justify-center mb-10" id="flores-arriba-despedida">
+        <img
+          src="/imagenes/Separadores.webp"
+          alt="Flores decorativas"
+          class="w-40 md:w-48 lg:w-56 h-auto object-contain opacity-90"
+        />
+      </div> -->
+
+      <!-- CARD PRINCIPAL -->
+      <div 
+        class="relative backdrop-blur-sm bg-white/10 rounded-[2.5rem] border-2 border-[#C9A961]/20 p-10 md:p-12 lg:p-16" 
+        id="card-despedida"
+      >
+        <!-- Brillo superior sutil -->
+        <div class="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/10 to-transparent rounded-t-[2.5rem] pointer-events-none"></div>
+
+        <!-- Ornamentos decorativos en las esquinas -->
+        <div class="absolute top-4 left-4 w-16 h-16">
+          <div class="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#C9A961]/40 to-transparent"></div>
+          <div class="absolute top-0 left-0 w-0.5 h-full bg-gradient-to-b from-[#C9A961]/40 to-transparent"></div>
+        </div>
+        <div class="absolute top-4 right-4 w-16 h-16">
+          <div class="absolute top-0 right-0 w-full h-0.5 bg-gradient-to-l from-[#C9A961]/40 to-transparent"></div>
+          <div class="absolute top-0 right-0 w-0.5 h-full bg-gradient-to-b from-[#C9A961]/40 to-transparent"></div>
+        </div>
+        <div class="absolute bottom-4 left-4 w-16 h-16">
+          <div class="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-[#C9A961]/40 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 w-0.5 h-full bg-gradient-to-t from-[#C9A961]/40 to-transparent"></div>
+        </div>
+        <div class="absolute bottom-4 right-4 w-16 h-16">
+          <div class="absolute bottom-0 right-0 w-full h-0.5 bg-gradient-to-l from-[#C9A961]/40 to-transparent"></div>
+          <div class="absolute bottom-0 right-0 w-0.5 h-full bg-gradient-to-t from-[#C9A961]/40 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10">
+          <!-- TÍTULO -->
+          <div id="titulo-despedida" class="mb-8">
+            <h2 class="font-charm text-3xl md:text-3xl lg:text-3xl text-[#C9A961] font-bold mb-4">
+              Querida Familia y Amigos
+            </h2>
+            <div class="flex items-center justify-center gap-3">
+              <div class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#C9A961]"></div>
+              <div class="w-2 h-2 rounded-full bg-[#C9A961]"></div>
+              <div class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#C9A961]"></div>
+            </div>
+          </div>
+
+          <!-- MENSAJE PRINCIPAL -->
+          <div id="mensaje-despedida" class="space-y-6 mb-10">
+            <p class="parrafo-animado font-charm text-xl md:text-2xl lg:text-3xl text-[#626a54] leading-relaxed">
+              Con gran alegría y gratitud a Dios, queremos compartir con ustedes uno de los momentos más importantes de nuestras vidas.
+            </p>
+            <p class="parrafo-animado font-charm text-xl md:text-2xl lg:text-3xl text-[#626a54] leading-relaxed">
+              Hoy, nuestros caminos se unen para comenzar una nueva historia juntos, y no podríamos imaginar este día sin la presencia de las personas que más queremos.
+            </p>
+            <p class="parrafo-animado font-charm text-xl md:text-2xl lg:text-3xl text-[#626a54] leading-relaxed">
+              ¡Los esperamos para compartir amor, alegría y muchas bendiciones en este día tan especial!
+            </p>
+          </div>
+
+          <!-- LÍNEA DECORATIVA CON CORAZÓN -->
+          <div class="flex items-center justify-center gap-4 my-10" id="linea-decorativa">
+            <div class="w-20 h-[1px] bg-gradient-to-r from-transparent via-[#C9A961] to-[#C9A961]"></div>
+            <div class="relative">
+              <svg class="w-8 h-8 text-[#C9A961]" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div class="w-20 h-[1px] bg-gradient-to-l from-transparent via-[#C9A961] to-[#C9A961]"></div>
+          </div>
+
+          <!-- SECCIÓN CONFIRMAR ASISTENCIA -->
+          <div id="seccion-confirmar" class="mt-10">
+            <p class="font-charm text-2xl md:text-3xl lg:text-4xl text-[#C9A961] font-bold mb-8" id="texto-confirmar">
+              Esperamos contar con tu presencia
+            </p>
+            <div class="flex justify-center mb-10" id="boton-confirmar">
+              <a
+                href="https://wa.me/59179813404?text=Me%20complace%20confirmar%20mi%20asistencia%20a%20la%20boda%20de%20Rimer%20y%20M%C3%B3nica%2C%20que%20se%20realizar%C3%A1%20el%20s%C3%A1bado%2021%20de%20noviembre%20de%202026.%20%C2%A1Estar%C3%A9%20sin%20falta!%20Muchas%20gracias."
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src="/imagenes/ConfirmarAsistencia.webp"
+                  alt="Confirmar asistencia por WhatsApp"
+                  class="w-64 md:w-72 lg:w-72 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105 hover:brightness-110"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 🌸 FLORES INFERIORES -->
+      <div class="flex justify-center mt-10" id="flores-abajo-despedida">
+        <img
+          src="/imagenes/Separadores.webp"
+          alt="Flores decorativas"
+          class="w-40 md:w-48 lg:w-56 h-auto object-contain opacity-90 transform "
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { entrada } from "../scripts/entrada";
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#flores-arriba-despedida",
+      pasos: [
+        ["#flores-arriba-despedida", "arriba", { opacidad: 0.9 }],
+        ["#card-despedida", "abajo"],
+        ["#titulo-despedida", "izq"],
+        [".parrafo-animado", "der", { stagger: 0.25 }],
+        ["#linea-decorativa", "centro"],
+        ["#texto-confirmar", "izq"],
+        ["#boton-confirmar", "der"],
+        ["#flores-abajo-despedida", "abajo", { opacidad: 0.9 }],
+      ],
+      alMostrar: () => {
+        // Corazón latiendo suave
+        gsap.to("#linea-decorativa svg", { scale: 1.3, duration: 1.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        // Botón pulsando suavemente
+        gsap.to("#boton-confirmar img", { scale: 1.05, y: -5, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+        // Brillo sutil en el texto de confirmar
+        gsap.to("#texto-confirmar", { textShadow: "0 0 15px rgba(201, 169, 97, 0.5)", duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      },
+    });
+  });
+</script>
+
+<style>
+  #card-despedida {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #card-despedida:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(201, 169, 97, 0.2);
+  }
+
+  #mensaje-despedida span {
+    transition: all 0.3s ease;
+    display: inline-block;
+  }
+
+  #mensaje-despedida span:hover {
+    color: #d4b16e;
+    transform: scale(1.05);
+    text-shadow: 0 2px 10px rgba(201, 169, 97, 0.4);
+  }
+</style>

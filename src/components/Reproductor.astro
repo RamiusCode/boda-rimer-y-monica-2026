@@ -1,0 +1,550 @@
+<!-- REPRODUCTOR DE MÚSICA CON TIMING INTELIGENTE -->
+<div
+  class="w-full max-w-[350px] sm:max-w-sm mx-auto sm:mt-4 px-4"
+  id="music-player-container"
+>
+  <!-- Card principal con efecto glass -->
+  <div
+    class="bg-white/20 backdrop-blur-xl border border-white/30 rounded-3xl p-6 sm:p-8 shadow-lg relative overflow-hidden"
+    id="player-card"
+  >
+    <!-- Efecto de brillo de fondo -->
+    <div
+      class="absolute inset-0 bg-gradient-to-br from-[#626a54]/10 via-transparent to-[#626a54]/5 pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute -top-20 -right-20 w-40 h-40 bg-[#626a54]/10 rounded-full blur-3xl pointer-events-none"
+    >
+    </div>
+    <div
+      class="absolute -bottom-20 -left-20 w-32 h-32 bg-[#626a54]/8 rounded-full blur-3xl pointer-events-none"
+    >
+    </div>
+
+    <!-- Contenido del reproductor -->
+    <div class="relative z-10">
+      <!-- Título elegante -->
+      <div class="text-center mb-3" id="player-title">
+        <div class="text-center z-30 mb-2 w-full" id="titulo-container">
+          <div
+            class="flex items-center justify-center gap-3 sm:gap-4 md:gap-6 lg:gap-8"
+          >
+            <!-- 🦋 MARIPOSA IZQUIERDA -->
+            <div id="mariposa-izq" class="flex-shrink-0">
+              <img
+                src="/gif/mariposaVerde.gif"
+                alt="Mariposa izquierda"
+                class="w-8 h-auto sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain"
+              />
+            </div>
+
+            <!-- TEXTO CENTRAL -->
+            <div id="titulo" class="flex-shrink min-w-0">
+              <h3
+                class="font-great-vibes text-xl sm:text-2xl md:text-2xl text-[#626a54] mb-2"
+              >
+                Mi Canción Especial
+              </h3>
+            </div>
+
+            <!-- 🦋 MARIPOSA DERECHA -->
+            <div id="mariposa-der" class="flex-shrink-0">
+              <img
+                src="/gif/mariposaVerde.gif"
+                alt="Mariposa derecha"
+                class="w-8 h-auto sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 object-contain scale-x-[-1]"
+              />
+            </div>
+          </div>
+        </div>
+        <p
+          id="romantic-text"
+          class="text-xs sm:text-sm italic text-[#626a54]/70 font-medium w-full text-center px-2"
+        >
+          ✨ Una melodía para recordar siempre ✨
+        </p>
+      </div>
+
+      <!-- Controles principales -->
+      <div
+        class="flex items-center justify-center space-x-6 sm:space-x-10"
+        id="controls-container"
+      >
+        <!-- Botón anterior -->
+        <button
+          id="prevBtn"
+          class="text-[#626a54]/60 hover:text-[#626a54] transition-all duration-300 text-xl sm:text-2xl p-3 rounded-full hover:bg-white/20 transform hover:scale-110 focus:outline-none"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 6v12l-2-2V8l2-2zm2 6l8-5v10l-8-5z"></path>
+          </svg>
+        </button>
+
+        <!-- Botón principal corazón -->
+        <button
+          id="playPauseBtn"
+          class="relative text-[#626a54] text-4xl sm:text-5xl transition-all duration-300 transform hover:scale-110 focus:outline-none group"
+        >
+          <!-- Fondo del botón corazón -->
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-[#626a54]/20 to-[#626a54]/10 rounded-full blur-lg scale-150 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          >
+          </div>
+
+          <!-- Icono corazón -->
+          <div class="relative z-10 transform transition-all duration-300">
+            <svg
+              width="48"
+              height="48"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              class="drop-shadow-lg"
+            >
+              <path
+                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              ></path>
+            </svg>
+
+            <!-- Icono play/pause superpuesto -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <svg
+                id="play-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="drop-shadow-sm"
+              >
+                <path d="M8 5v14l11-7z"></path>
+              </svg>
+              <svg
+                id="pause-icon"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="white"
+                class="hidden drop-shadow-sm"
+              >
+                <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"></path>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Ondas de pulso -->
+          <div
+            class="absolute inset-0 pointer-events-none"
+            id="heart-particles"
+          >
+          </div>
+        </button>
+
+        <!-- Botón siguiente -->
+        <button
+          id="nextBtn"
+          class="text-[#626a54]/60 hover:text-[#626a54] transition-all duration-300 text-xl sm:text-2xl p-3 rounded-full hover:bg-white/20 transform hover:scale-110 focus:outline-none"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17 18V6l2 2v8l-2 2zm-2-6L7 7v10l8-5z"></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Barra de progreso elegante -->
+      <div class="px-2 sm:px-4" id="progress-container">
+        <div
+          class="flex items-center justify-between text-xs sm:text-sm text-[#626a54]/60 mb-3 font-medium"
+        >
+          <span id="currentTime">0:00</span>
+          <span class="text-[#C9A961]/80">♪</span>
+          <span id="totalDuration">--:--</span>
+        </div>
+
+        <!-- Barra de progreso personalizada -->
+        <div class="relative">
+          <input
+            type="range"
+            id="progressBar"
+            value="0"
+            max="100"
+            class="w-full h-2 bg-gradient-to-r from-[#626a54]/20 to-[#626a54]/10 rounded-full appearance-none cursor-pointer slider-elegant"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Audio element -->
+<audio id="music-audio" preload="auto">
+  <source src="/musica/melodia.mp3" type="audio/mpeg" />
+  Tu navegador no soporta audio HTML5.
+</audio>
+
+<!-- SCRIPTS CON TIMING INTELIGENTE -->
+<script>
+  import { gsap } from "gsap";
+  import { entrada } from "../scripts/entrada";
+
+  let isPlaying = false;
+  let currentTime = 0;
+  let duration = 0;
+
+  document.addEventListener("DOMContentLoaded", () => {
+    console.log("🎵 Iniciando reproductor con timing inteligente...");
+
+    entrada({
+      trigger: "#music-player-container",
+      start: "top 100%",
+      pasos: [
+        ["#music-player-container", "abajo"],
+        ["#player-title", "izq"],
+        ["#controls-container", "centro"],
+        ["#progress-container", "der"],
+        ["#romantic-text", "abajo", { opacidad: 0.8 }],
+      ],
+    });
+
+    // EVENT LISTENERS
+    const playPauseBtn = document.getElementById("playPauseBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+    const progressBar = document.getElementById("progressBar");
+
+    if (playPauseBtn) {
+      playPauseBtn.addEventListener("click", togglePlayPause);
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener("click", previousTrack);
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener("click", nextTrack);
+    }
+
+    if (progressBar) {
+      progressBar.addEventListener("input", seekAudio);
+    }
+
+    // OBTENER DURACIÓN REAL DEL AUDIO
+    const audioElement = document.getElementById("music-audio");
+    if (audioElement instanceof HTMLAudioElement) {
+      audioElement.addEventListener("loadedmetadata", () => {
+        duration = audioElement.duration;
+        updateTimeDisplay();
+        console.log(
+          `Duración real: ${Math.floor(duration / 60)}:${Math.floor(
+            duration % 60
+          )
+            .toString()
+            .padStart(2, "0")}`
+        );
+      });
+
+      audioElement.addEventListener("canplaythrough", () => {
+        if (duration === 0 && audioElement.duration) {
+          duration = audioElement.duration;
+          updateTimeDisplay();
+        }
+      });
+    }
+  });
+
+  // FUNCIÓN PLAY/PAUSE
+  function togglePlayPause() {
+    const audioElement = document.getElementById("music-audio");
+    const playIcon = document.getElementById("play-icon");
+    const pauseIcon = document.getElementById("pause-icon");
+    const heartBtn = document.getElementById("playPauseBtn");
+
+    if (!(audioElement instanceof HTMLAudioElement)) {
+      console.log("No se encontró el elemento de audio");
+      return;
+    }
+
+    const audio = audioElement;
+
+    if (!isPlaying) {
+      audio.play().catch((error) => console.log("Error al reproducir:", error));
+
+      if (playIcon) playIcon.classList.add("hidden");
+      if (pauseIcon) pauseIcon.classList.remove("hidden");
+
+      // Animación suave del botón
+      gsap.to(heartBtn, {
+        scale: 1.15,
+        duration: 0.3,
+        ease: "back.out(2)",
+      });
+
+      gsap.to(heartBtn, {
+        scale: 1,
+        duration: 0.3,
+        delay: 0.3,
+        ease: "power2.out",
+      });
+
+      // ✨ EFECTO SIMPLE: Ondas concéntricas suaves
+      createSimpleWaves();
+
+      isPlaying = true;
+      startProgress();
+    } else {
+      audio.pause();
+
+      if (playIcon) playIcon.classList.remove("hidden");
+      if (pauseIcon) pauseIcon.classList.add("hidden");
+
+      isPlaying = false;
+    }
+  }
+
+  // ✨ CREAR ONDAS SIMPLES Y ELEGANTES
+  function createSimpleWaves() {
+    const container = document.getElementById("heart-particles");
+    if (!container) return;
+
+    // Crear 3 ondas concéntricas
+    for (let i = 0; i < 3; i++) {
+      const wave = document.createElement("div");
+      wave.style.cssText = `
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        border: 2px solid #626a54;
+        border-radius: 50%;
+        opacity: 0;
+        pointer-events: none;
+      `;
+
+      container.appendChild(wave);
+
+      // Animar cada onda
+      gsap.timeline()
+        .to(wave, {
+          opacity: 0.6,
+          duration: 0.3,
+          delay: i * 0.15,
+          ease: "power2.out"
+        })
+        .to(wave, {
+          width: 120,
+          height: 120,
+          opacity: 0,
+          duration: 1,
+          ease: "power2.out",
+          onComplete: () => wave.remove()
+        }, `-=0.1`);
+    }
+  }
+
+  // FUNCIONES ADICIONALES
+  function previousTrack() {
+    console.log("Canción anterior");
+    gsap.to("#prevBtn", {
+      scale: 1.2,
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1,
+    });
+  }
+
+  function nextTrack() {
+    console.log("Siguiente canción");
+    gsap.to("#nextBtn", {
+      scale: 1.2,
+      duration: 0.1,
+      yoyo: true,
+      repeat: 1,
+    });
+  }
+
+  function seekAudio() {
+    const progressBarElement = document.getElementById("progressBar");
+    const audioElement = document.getElementById("music-audio");
+
+    if (
+      progressBarElement instanceof HTMLInputElement &&
+      audioElement instanceof HTMLAudioElement
+    ) {
+      const value = Number(progressBarElement.value) || 0;
+      const seekTime = (value / 100) * audioElement.duration;
+
+      audioElement.currentTime = seekTime;
+      currentTime = seekTime;
+      updateTimeDisplay();
+    }
+  }
+
+  function startProgress() {
+    const audioElement = document.getElementById("music-audio");
+
+    if (!(audioElement instanceof HTMLAudioElement)) return;
+
+    const interval = setInterval(() => {
+      if (!isPlaying) {
+        clearInterval(interval);
+        return;
+      }
+
+      currentTime = audioElement.currentTime;
+      duration = audioElement.duration || duration;
+
+      if (currentTime >= duration) {
+        isPlaying = false;
+        const playIcon = document.getElementById("play-icon");
+        const pauseIcon = document.getElementById("pause-icon");
+        if (playIcon) playIcon.classList.remove("hidden");
+        if (pauseIcon) pauseIcon.classList.add("hidden");
+        clearInterval(interval);
+      }
+
+      updateProgress();
+    }, 100);
+  }
+
+  function updateProgress() {
+    const progressBarElement = document.getElementById("progressBar");
+
+    if (progressBarElement instanceof HTMLInputElement) {
+      const progressBar = progressBarElement;
+      const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
+      progressBar.value = progress.toString();
+    }
+    updateTimeDisplay();
+  }
+
+  function updateTimeDisplay() {
+    const currentTimeEl = document.getElementById("currentTime");
+    const totalDurationEl = document.getElementById("totalDuration");
+    const audioElement = document.getElementById("music-audio");
+
+    if (audioElement instanceof HTMLAudioElement) {
+      if (currentTimeEl) {
+        const minutes = Math.floor(audioElement.currentTime / 60);
+        const seconds = Math.floor(audioElement.currentTime % 60);
+        currentTimeEl.textContent = `${minutes}:${seconds.toString().padStart(2, "0")}`;
+      }
+
+      if (totalDurationEl && audioElement.duration) {
+        const totalMinutes = Math.floor(audioElement.duration / 60);
+        const totalSeconds = Math.floor(audioElement.duration % 60);
+        totalDurationEl.textContent = `${totalMinutes}:${totalSeconds.toString().padStart(2, "0")}`;
+      } else if (totalDurationEl && duration > 0) {
+        const totalMinutes = Math.floor(duration / 60);
+        const totalSeconds = Math.floor(duration % 60);
+        totalDurationEl.textContent = `${totalMinutes}:${totalSeconds.toString().padStart(2, "0")}`;
+      }
+    }
+  }
+</script>
+
+<style>
+  #player-card {
+    backdrop-filter: blur(25px);
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.25),
+      rgba(255, 255, 255, 0.1)
+    );
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow:
+      0 4px 12px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.5);
+  }
+
+  .slider-elegant {
+    background: linear-gradient(
+      to right,
+      rgba(98, 106, 84, 0.3),
+      rgba(98, 106, 84, 0.1)
+    );
+    outline: none;
+    border-radius: 15px;
+  }
+
+  .slider-elegant::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #626a54, #7a8466);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(98, 106, 84, 0.3);
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+  }
+
+  .slider-elegant::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(98, 106, 84, 0.5);
+  }
+
+  .slider-elegant::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #626a54, #7a8466);
+    cursor: pointer;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 2px 8px rgba(98, 106, 84, 0.3);
+  }
+
+  @keyframes heartbeat {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    75% {
+      transform: scale(1.15);
+    }
+  }
+
+  #playPauseBtn:hover {
+    animation: heartbeat 1.5s ease-in-out infinite;
+  }
+
+  button:not(#playPauseBtn):hover {
+    transform: translateY(-2px) scale(1.05);
+  }
+
+  #player-card::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+      45deg,
+      rgba(98, 106, 84, 0.1),
+      transparent,
+      rgba(98, 106, 84, 0.1)
+    );
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #player-card:hover::before {
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    #player-card {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  }
+</style>

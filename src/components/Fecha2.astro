@@ -1,0 +1,241 @@
+---
+// Fecha2.astro — Domingo 27 de Diciembre (Misa y Salud + Recepción)
+---
+<section class="py-8 px-4 relative">
+  <div class="max-w-xl mx-auto text-center relative">
+
+    <!-- 🌸 Separador decorativo arriba -->
+    <div class="flex justify-center mb-6" id="separador-fecha2">
+      <img
+        src="/imagenes/Separadores.webp"
+        alt="Separador decorativo"
+        class="w-40 md:w-48 lg:w-56 h-auto object-contain"
+      />
+    </div>
+
+    <!-- 📅 FECHA CON LÍNEAS (estilo Fecha.astro) -->
+    <div class="relative max-w-md mx-auto mb-6" id="titulo-fecha2">
+      <div class="flex items-center justify-center gap-4 md:gap-6">
+
+        <!-- DOMINGO con líneas arriba y abajo -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#C9A961] mb-2"></div>
+          <span class="font-charm text-lg md:text-xl text-[#626a54] uppercase tracking-wider font-bold text-center">
+            DOMINGO
+          </span>
+          <div class="w-full h-px bg-[#C9A961] mt-2"></div>
+        </div>
+
+        <!-- Número 27 - CENTRADO -->
+        <div class="flex items-center justify-center min-w-[80px] md:min-w-[100px]">
+          <span class="font-charm text-7xl md:text-8xl text-[#C9A961] font-bold">
+            27
+          </span>
+        </div>
+
+        <!-- DICIEMBRE con líneas arriba y abajo -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#C9A961] mb-2"></div>
+          <span class="font-charm text-lg md:text-xl text-[#626a54] uppercase tracking-wider font-bold text-center">
+            DICIEMBRE
+          </span>
+          <div class="w-full h-px bg-[#C9A961] mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Año 2026 -->
+      <div class="mt-4 flex justify-center">
+        <p class="font-charm text-3xl md:text-4xl text-[#626a54] font-bold">
+          2026
+        </p>
+      </div>
+    </div>
+
+    <!-- TÍTULO MISA Y SALUD (arriba de la imagen) -->
+    <div class="mb-4" id="titulo-misa-f2">
+      <p class="font-charm text-2xl md:text-3xl text-[#C9A961] font-bold">
+        Misa y Salud
+      </p>
+    </div>
+
+    <!-- 🏛️ ICONO CON FLORES EN LOS BORDES -->
+    <div class="relative mb-4" id="icono-fecha2">
+
+      <!-- 🌸 FLORES EN EL BORDE IZQUIERDO -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="flores-f2-izq">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas izquierda"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+      <!-- ICONO CENTRAL -->
+      <div class="flex justify-center">
+        <div
+          role="img"
+          aria-label="Misa y Salud"
+          class="w-24 h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 icono-fecha2"
+        ></div>
+      </div>
+
+      <!-- 🌸 FLORES EN EL BORDE DERECHO -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="flores-f2-der">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas derecha"
+          class="w-full h-auto object-contain scale-x-[-1]"
+        />
+      </div>
+
+    </div>
+
+    <!-- INFORMACIÓN -->
+    <div class="mb-4" id="info-fecha2">
+      <!-- Título -->
+      <p class="font-charm text-2xl md:text-3xl text-[#C9A961] font-bold mb-1">
+        Gruta de Nuestra Señora de Lourdes
+      </p>
+      <!-- Hora en verde -->
+      <p class="font-charm text-xl md:text-2xl text-[#4d7c3a] font-bold mb-4">
+        11:00 Hrs.
+      </p>
+      <!-- Botón ubicación Misa y Salud -->
+      <div class="flex justify-center mb-6" id="boton-misa-f2">
+        <a
+          href="https://maps.app.goo.gl/yRQDy9Ki62fuaPZK9"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/imagenes/VerUbicacion.webp"
+            alt="Ver ubicación de la Misa y Salud"
+            class="w-56 md:w-56 lg:w-64 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+          />
+        </a>
+      </div>
+      <!-- Texto -->
+      <p class="font-charm text-xl md:text-lg text-[#626a54] leading-relaxed max-w-md mx-auto">
+        Pasado la Misa y Salud, les invitamos a la recepción
+        que se realizará en el mismo salón<br />
+        <span class="font-charm text-2xl md:text-xl text-[#C9A961] font-bold">Salón de eventos VRONX</span>
+      </p>
+    </div>
+
+    <!-- BOTÓN VER UBICACIÓN -->
+    <div class="flex justify-center mt-4" id="boton-fecha2">
+      <a
+        href="https://maps.app.goo.gl/dUyfoje7aKYWqfzx6"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="/imagenes/VerUbicacion.webp"
+          alt="Ver ubicación en el mapa"
+          class="w-56 md:w-56 lg:w-64 h-auto object-contain cursor-pointer transition-transform duration-300 hover:scale-105"
+        />
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      // Estado inicial
+      gsap.set("#separador-fecha2", { opacity: 0, scale: 0.8 });
+      gsap.set("#titulo-misa-f2", { opacity: 0, scale: 0.9 });
+      gsap.set("#icono-fecha2", { opacity: 0, scale: 0.8 });
+      gsap.set("#titulo-fecha2", { opacity: 0, scale: 0.9 });
+      gsap.set("#info-fecha2", { opacity: 0, scale: 0.9 });
+      gsap.set("#boton-fecha2", { opacity: 0, scale: 0.9 });
+      gsap.set("#flores-f2-izq", { opacity: 0, x: -30 });
+      gsap.set("#flores-f2-der", { opacity: 0, x: 30 });
+
+      // ✨ ANIMACIÓN SIMULTÁNEA - TODO AL MISMO TIEMPO
+      ScrollTrigger.create({
+        trigger: "#icono-fecha2",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          const tl = gsap.timeline();
+
+          // TODO aparece al mismo tiempo
+          tl.to("#separador-fecha2, #titulo-misa-f2, #icono-fecha2, #flores-f2-izq, #flores-f2-der, #titulo-fecha2, #info-fecha2, #boton-fecha2", {
+            opacity: 1,
+            duration: 1,
+            ease: "power2.out",
+          })
+          // Animaciones individuales (simultáneas)
+          .to("#icono-fecha2", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.5)",
+          }, "<")
+          .to("#flores-f2-izq", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#flores-f2-der", {
+            x: 0,
+            duration: 1,
+            ease: "power2.out",
+          }, "<")
+          .to("#separador-fecha2, #titulo-misa-f2, #titulo-fecha2, #info-fecha2, #boton-fecha2", {
+            scale: 1,
+            duration: 1,
+            ease: "back.out(1.2)",
+          }, "<");
+        },
+        onLeaveBack: () => {
+          // Salida simultánea
+          const tl = gsap.timeline();
+
+          tl.to("#separador-fecha2, #titulo-misa-f2, #icono-fecha2, #flores-f2-izq, #flores-f2-der, #titulo-fecha2, #info-fecha2, #boton-fecha2", {
+            opacity: 0,
+            duration: 0.5,
+            ease: "power2.in",
+          })
+          .to("#icono-fecha2", {
+            scale: 0.8,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#flores-f2-izq", {
+            x: -30,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#flores-f2-der", {
+            x: 30,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<")
+          .to("#separador-fecha2, #titulo-misa-f2, #titulo-fecha2, #info-fecha2, #boton-fecha2", {
+            scale: 0.9,
+            duration: 0.5,
+            ease: "power2.in",
+          }, "<");
+        },
+      });
+
+      console.log("📅🌸 Sección Fecha2 (Domingo 27) inicializada");
+    });
+  }
+</script>
+
+<style>
+  /* Icono pintado en dorado (misma técnica que en Dirección) */
+  .icono-fecha2 {
+    background-color: #C9A961;
+    -webkit-mask: url("/imagenes/iglesia.png") center / contain no-repeat;
+    mask: url("/imagenes/iglesia.png") center / contain no-repeat;
+  }
+</style>

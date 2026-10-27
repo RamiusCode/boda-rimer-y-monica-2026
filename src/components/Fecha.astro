@@ -1,0 +1,127 @@
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 📅 COMPONENTE FECHA - FECHA DEL EVENTO DE BODA             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<section class="py-2 px-4">
+  <div class="max-w-2xl mx-auto text-center relative">
+    
+    <!-- 🍃 HOJA IZQUIERDA - PEGADA AL BORDE -->
+    <div class="absolute left-0 top-1/2 -translate-y-3/5 w-16 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="hoja-fecha-izq">
+      <img
+        src="/imagenes/Hojas.webp"
+        alt="Hoja izquierda"
+        class="w-full h-auto object-contain transform -scale-x-100"
+      />
+    </div>
+
+    <!-- 🍃 HOJA DERECHA - PEGADA AL BORDE -->
+    <div class="absolute right-0 top-1/2 -translate-y-3/5 w-16 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="hoja-fecha-der">
+      <img
+        src="/imagenes/Hojas.webp"
+        alt="Hoja derecha"
+        class="w-full h-auto object-contain"
+      />
+    </div>
+    
+    <!-- 🌸 Flores centrales arriba -->
+    <div class="flex justify-center mb-6" id="flores-fecha">
+      <img
+        src="/imagenes/Separadores.webp"
+        alt="Flores decorativas"
+        class="w-40 md:w-48 lg:w-56 h-auto"
+      />
+    </div>
+
+    <!-- 💍 Texto "Acompáñanos este día tan especial" -->
+    <div class="mb-6" id="texto-invitacion-container">
+      <div class="flex items-center justify-center px-4">
+        
+        <!-- 📝 TEXTO CENTRAL -->
+        <div id="texto-invitacion" class="flex-shrink-0">
+          <p class="font-great-vibes text-3xl sm:text-3xl md:text-4xl text-[#C9A961] leading-relaxed text-center">
+            Acompáñanos este día<br />tan especial
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 📅 Fecha con líneas arriba y abajo -->
+    <div class="relative max-w-md mx-auto" id="fecha-evento">
+      <div class="flex items-center justify-center gap-4 md:gap-6">
+        
+        <!-- SÁBADO con líneas arriba y abajo -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#C9A961] mb-2"></div>
+          <span class="font-charm text-lg md:text-xl text-[#626a54] uppercase tracking-wider font-bold text-center">
+            SÁBADO
+          </span>
+          <div class="w-full h-px bg-[#C9A961] mt-2"></div>
+        </div>
+
+        <!-- Números 21–22 - CENTRADO -->
+        <div class="flex items-center justify-center min-w-[80px] md:min-w-[100px]">
+          <span class="font-charm text-5xl md:text-7xl text-[#C9A961] font-bold whitespace-nowrap">
+            21–22
+          </span>
+        </div>
+
+        <!-- ABRIL con líneas arriba y abajo -->
+        <div class="flex flex-col items-center w-24 md:w-28">
+          <div class="w-full h-px bg-[#C9A961] mb-2"></div>
+          <span class="font-charm text-lg md:text-xl text-[#626a54] uppercase tracking-wider font-bold text-center">
+            NOVIEMBRE
+          </span>
+          <div class="w-full h-px bg-[#C9A961] mt-2"></div>
+        </div>
+      </div>
+
+      <!-- Año 2026 -->
+      <div class="mt-4 flex justify-center" id="anio-evento">
+        <p class="font-charm text-3xl md:text-4xl text-[#626a54] font-bold">
+          2026
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 ANIMACIONES CON GSAP                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+  import { entrada } from "../scripts/entrada";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#flores-fecha",
+      pasos: [
+        ["#flores-fecha", "arriba"],
+        ["#hoja-fecha-izq", "izq"],
+        ["#hoja-fecha-der", "der"],
+        ["#texto-invitacion", "izq"],
+        ["#fecha-evento", "der"],
+        ["#anio-evento", "abajo"],
+      ],
+    });
+  });
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎨 ESTILOS CSS                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* Mejoras visuales */
+  #fecha-evento {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 640px) {
+    section {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+</style>

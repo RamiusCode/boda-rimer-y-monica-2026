@@ -1,0 +1,142 @@
+---
+// CodigoVestimenta.astro
+---
+<section class="py-2 px-4 relative overflow-hidden">
+  <!-- Fondo sutil -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#fffaf5]/40 via-[#fff9f0]/20 to-[#fffaf5]/40 z-0"></div>
+
+  <div class="max-w-xl mx-auto text-center relative z-10">
+   
+    <!-- 🌸 SEPARADOR SUPERIOR -->
+    <div class="flex justify-center mb-6" id="separador-superior">
+      <img
+        src="/imagenes/Separadores.webp"
+        alt="Separador decorativo"
+        class="w-32 md:w-40 lg:w-48 h-auto object-contain opacity-90"
+      />
+    </div>
+    
+    <!-- TÍTULO CÓDIGO DE VESTIMENTA -->
+    <div class="mb-6" id="titulo-vestimenta">
+      <h2
+        class="font-charm text-2xl md:text-3xl lg:text-3xl text-[#C9A961] font-bold tracking-wide mb-4"
+      >
+        CÓDIGO DE VESTIMENTA
+      </h2>
+      <!-- Línea decorativa -->
+      <div class="flex items-center justify-center gap-3">
+        <div class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#C9A961]"></div>
+        <div class="w-2 h-2 rounded-full bg-[#C9A961]"></div>
+        <div class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#C9A961]"></div>
+      </div>
+    </div>
+    
+    <!-- 👔 IMAGEN VESTIMENTA CON FLORES EN LOS BORDES (igual que en Dirección) -->
+    <div class="relative mb-6">
+
+      <!-- 🌸 FLORES EN EL BORDE IZQUIERDO -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="flores-vest-izq">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas izquierda"
+          class="w-full h-auto object-contain"
+        />
+      </div>
+
+      <div class="flex justify-center" id="imagen-vestimenta">
+        <img
+          src="/imagenes/CodigoVestimenta.webp"
+          alt="Código de vestimenta"
+          class="w-20 md:w-28 lg:w-28 h-auto object-contain drop-shadow-lg"
+        />
+      </div>
+
+      <!-- 🌸 FLORES EN EL BORDE DERECHO -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="flores-vest-der">
+        <img
+          src="/imagenes/FloresBorde.webp"
+          alt="Flores decorativas derecha"
+          class="w-full h-auto object-contain scale-x-[-1]"
+        />
+      </div>
+
+    </div>
+    
+    <!-- DESCRIPCIÓN -->
+    <div class="mb-4" id="descripcion-vestimenta">
+      <p
+        class="font-charm text-3xl md:text-4xl text-[#C9A961] font-bold leading-relaxed"
+      >
+        Formal
+      </p>
+    </div>
+    
+    <!-- 🌸 SEPARADOR INFERIOR -->
+    <div class="flex justify-center mt-6" id="separador-inferior">
+      <img
+        src="/imagenes/Separadores.webp"
+        alt="Separador decorativo"
+        class="w-32 md:w-40 lg:w-48 h-auto object-contain opacity-90 transform "
+      />
+    </div>
+  </div>
+</section>
+
+<script>
+  import { entrada } from "../scripts/entrada";
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#separador-superior",
+      pasos: [
+        ["#separador-superior", "arriba"],
+        ["#titulo-vestimenta", "izq"],
+        ["#imagen-vestimenta", "centro"],
+        ["#flores-vest-izq", "izq"],
+        ["#flores-vest-der", "der"],
+        ["#descripcion-vestimenta", "der"],
+        ["#separador-inferior", "abajo"],
+      ],
+      alMostrar: () => {
+        // Brillo sutil en la imagen
+        gsap.to("#imagen-vestimenta", { scale: 1.05, duration: 2.5, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      },
+    });
+  });
+</script>
+
+<style>
+  /* Transición suave para textos */
+  #descripcion-vestimenta p {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #descripcion-vestimenta:hover p {
+    color: #a88a4d;
+    transform: scale(1.05);
+    text-shadow: 0 2px 8px rgba(201, 169, 97, 0.3);
+  }
+
+  /* Efecto hover en la imagen */
+  #imagen-vestimenta img {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #imagen-vestimenta:hover img {
+    transform: scale(1.1);
+    filter: drop-shadow(0 8px 20px rgba(201, 169, 97, 0.4));
+  }
+
+  /* Separadores con transición suave */
+  #separador-superior img,
+  #separador-inferior img {
+    transition: all 0.3s ease;
+  }
+
+  #separador-superior:hover img,
+  #separador-inferior:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+</style>

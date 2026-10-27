@@ -1,0 +1,279 @@
+---
+// SugerenciaRegalo.astro
+---
+
+<section class="py-8 md:py-12 lg:py-16 px-4 relative overflow-hidden">
+  <!-- Fondo sutil con textura -->
+  <div
+    class="absolute inset-0 bg-gradient-to-b from-[#f5f9f0]/40 via-[#faf8f5]/20 to-[#f5f9f0]/40 z-0"
+  >
+  </div>
+
+  <div class="max-w-4xl mx-auto relative z-10">
+    <!-- CONTENEDOR PRINCIPAL CON HOJAS -->
+    <div class="relative">
+      <!-- 🍃 HOJA LATERAL IZQUIERDA -->
+      <div
+        class="absolute -left-8 md:-left-16 top-1/2 -translate-y-1/2 w-20 md:w-28 pointer-events-none z-0"
+        id="hoja-qr-izq"
+      >
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja decorativa"
+          class="w-full h-auto object-contain transform -scale-x-100 opacity-60"
+        />
+      </div>
+
+      <!-- 🍃 HOJA LATERAL DERECHA -->
+      <div
+        class="absolute -right-8 md:-right-16 top-1/2 -translate-y-1/2 w-20 md:w-28 pointer-events-none z-0"
+        id="hoja-qr-der"
+      >
+        <img
+          src="/imagenes/Hojas.webp"
+          alt="Hoja decorativa"
+          class="w-full h-auto object-contain opacity-60"
+        />
+      </div>
+
+      <!-- TÍTULO -->
+      <div class="text-center mb-6" id="titulo-qr">
+        <h2
+          class="font-charm text-2xl md:text-4xl lg:text-5xl text-[#C9A961] font-bold mb-4"
+        >
+          SUGERENCIA DE REGALOS
+        </h2>
+        <!-- Línea decorativa -->
+        <div class="flex items-center justify-center gap-3">
+          <div
+            class="w-16 h-[2px] bg-gradient-to-r from-transparent to-[#C9A961]"
+          >
+          </div>
+          <div class="w-2 h-2 rounded-full bg-[#C9A961]"></div>
+          <div
+            class="w-16 h-[2px] bg-gradient-to-l from-transparent to-[#C9A961]"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- 🎁 ICONO REGALO (dorado) -->
+      <div class="flex justify-center mb-6" id="icono-regalo">
+        <div
+          role="img"
+          aria-label="Regalo"
+          class="w-20 h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 drop-shadow-md icono-regalo-dorado"
+          style="-webkit-mask-image: url('/imagenes/regalo.png'); mask-image: url('/imagenes/regalo.png');"
+        >
+        </div>
+      </div>
+
+      <!-- MENSAJE PRINCIPAL -->
+      <div class="max-w-2xl mx-auto mb-10" id="mensaje-qr">
+        <p
+          class="font-charm text-xl text-[#626a54] text-center leading-relaxed"
+        >
+          “El mejor regalo es tu presencia, pero si deseas tener un detalle con
+          nosotros, te dejamos esta opción.”
+        </p>
+      </div>
+
+      <!-- CARD CON QR Y DATOS -->
+      <div
+        class="bg-white/95 backdrop-blur-sm rounded-3xl border-2 border-[#C9A961]/30 py-8 md:py-10 px-6 md:px-10 lg:px-12 shadow-sm max-w-xl mx-auto"
+        id="card-qr"
+      >
+        <div class="flex flex-col items-center justify-center" id="qr-container">
+          <!-- QR GRANDE - pensado para escanear desde el celular -->
+          <div
+            class="w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-white rounded-2xl border-2 border-[#C9A961]/20 flex items-center justify-center shadow-sm mb-5"
+          >
+            <img
+              src="/imagenes/qr.png"
+              alt="Código QR para regalo"
+              class="w-full h-full object-contain p-3"
+            />
+          </div>
+          <p class="font-charm text-lg md:text-xl text-[#C9A961] font-bold">
+            Escanea el código
+          </p>
+
+          <!-- NÚMERO DE CUENTA -->
+          <div class="mt-5 px-6 py-2 rounded-full border-2 border-dashed border-[#C9A961]/50 bg-[#fffaf3]">
+            <p class="font-charm text-xl md:text-2xl text-[#626a54]">
+              <span class="text-[#C9A961] font-bold">Cuenta:</span> 8766884017
+            </p>
+          </div>
+        </div>
+
+        <!-- DECORACIÓN INFERIOR -->
+        <div class="flex justify-center mt-8" id="decoracion-qr">
+          <div class="flex gap-2">
+            <div class="w-2 h-2 rounded-full bg-[#C9A961] opacity-60"></div>
+            <div class="w-2 h-2 rounded-full bg-[#C9A961] opacity-80"></div>
+            <div class="w-2 h-2 rounded-full bg-[#C9A961]"></div>
+            <div class="w-2 h-2 rounded-full bg-[#C9A961] opacity-80"></div>
+            <div class="w-2 h-2 rounded-full bg-[#C9A961] opacity-60"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  if (typeof window !== "undefined") {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("🎁 Iniciando animación de Sugerencia de Regalos...");
+
+      // 🎯 ESTADO INICIAL
+      gsap.set("#hoja-qr-izq", { opacity: 0, x: -50 });
+      gsap.set("#hoja-qr-der", { opacity: 0, x: 50 });
+      gsap.set("#titulo-qr", { opacity: 0, scale: 0.8 });
+      gsap.set("#icono-regalo", { opacity: 0, scale: 0.7, y: -20 });
+      gsap.set("#mensaje-qr", { opacity: 0, scale: 0.8 });
+      gsap.set("#card-qr", { opacity: 0, scale: 0.8 });
+      gsap.set("#qr-container", { opacity: 0, scale: 0.8 });
+      gsap.set("#decoracion-qr", { opacity: 0, scale: 0.8 });
+
+      // ✨ ANIMACIÓN CON SCROLLTRIGGER - TODO SIMULTÁNEO
+      ScrollTrigger.create({
+        trigger: "#titulo-qr",
+        start: "top 85%",
+        end: "top 20%",
+        onEnter: () => {
+          gsap.to(
+            "#titulo-qr, #mensaje-qr, #card-qr, #qr-container, #decoracion-qr",
+            {
+              opacity: 1,
+              scale: 1,
+              duration: 1.2,
+              ease: "back.out(1.4)",
+            },
+          );
+
+          gsap.to("#icono-regalo", {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+            duration: 1.2,
+            ease: "back.out(1.6)",
+          });
+
+          gsap.to("#hoja-qr-izq, #hoja-qr-der", {
+            opacity: 0.6,
+            x: 0,
+            duration: 1.2,
+            ease: "power3.out",
+          });
+
+          // 💫 ANIMACIONES CONTINUAS
+
+          // Latido suave del icono de regalo
+          gsap.to("#icono-regalo", {
+            scale: 1.06,
+            duration: 2.5,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 1.2,
+          });
+
+          // Hojas laterales
+          gsap.to("#hoja-qr-izq", {
+            y: -8,
+            rotation: -3,
+            duration: 3,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 1.2,
+          });
+
+          gsap.to("#hoja-qr-der", {
+            y: -8,
+            rotation: 3,
+            duration: 3,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            delay: 1.5,
+          });
+
+          // Pulso en puntos decorativos
+          gsap.to("#decoracion-qr > div > div", {
+            scale: 1.3,
+            opacity: 0.4,
+            duration: 2,
+            ease: "sine.inOut",
+            yoyo: true,
+            repeat: -1,
+            stagger: 0.15,
+            delay: 1.5,
+          });
+        },
+        onLeaveBack: () => {
+          gsap.set("#hoja-qr-izq", { opacity: 0, x: -50 });
+          gsap.set("#hoja-qr-der", { opacity: 0, x: 50 });
+          gsap.set("#titulo-qr", { opacity: 0, scale: 0.8 });
+          gsap.set("#icono-regalo", { opacity: 0, scale: 0.7, y: -20 });
+          gsap.set("#mensaje-qr", { opacity: 0, scale: 0.8 });
+          gsap.set("#card-qr", { opacity: 0, scale: 0.8 });
+          gsap.set("#qr-container", { opacity: 0, scale: 0.8 });
+          gsap.set("#decoracion-qr", { opacity: 0, scale: 0.8 });
+        },
+      });
+
+      console.log("🎁✨ ¡Componente Sugerencia de Regalos activado!");
+    });
+  }
+</script>
+
+<style>
+  /* Icono de regalo pintado en dorado (misma técnica que en los demás) */
+  .icono-regalo-dorado {
+    background-color: #c9a961;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  /* Transición suave para el card */
+  #card-qr {
+    transition: all 0.3s ease;
+  }
+
+  #card-qr:hover {
+    box-shadow: 0 25px 60px rgba(201, 169, 97, 0.25);
+    transform: translateY(-5px);
+  }
+
+  /* Efecto hover en el QR */
+  #qr-container > div:first-child {
+    transition: all 0.4s ease;
+  }
+
+  #qr-container:hover > div:first-child {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(201, 169, 97, 0.3);
+  }
+
+  /* Hojas con transición */
+  #hoja-qr-izq,
+  #hoja-qr-der {
+    will-change: transform;
+  }
+
+  /* Puntos decorativos */
+  #decoracion-qr > div > div {
+    transition: all 0.3s ease;
+  }
+</style>

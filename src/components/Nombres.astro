@@ -1,0 +1,105 @@
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 👨‍👩‍👧 COMPONENTE NOMBRES - PADRES Y PADRINOS DE BODA        -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<section class="relative py-2">
+  <div class="max-w-5xl mx-auto relative">
+    
+    <!-- 🌸 Adorno floral izquierdo - CENTRADO VERTICALMENTE -->
+    <div class="absolute left-0 top-1/2 -translate-y-1/2 w-16 pointer-events-none -ml-6 sm:-ml-7 md:-ml-8" id="adorno-izq">
+      <img 
+        src="/imagenes/Hojas.webp" 
+        alt="Adorno floral izquierdo" 
+        class="w-full h-auto object-contain transform -scale-x-100" 
+      />
+    </div>
+
+    <!-- 📝 Contenido central -->
+    <div class="max-w-3xl mx-auto text-center relative z-10 px-4 md:px-8 lg:px-12">
+      
+      <!-- ✨ TEXTO DE BENDICIÓN -->
+      <div id="texto-bendicion" class="mb-8 px-0">
+        <p class="font-great-vibes text-3xl sm:text-3xl md:text-4xl text-[#C9A961] leading-relaxed">
+          Con la bendición de Dios y de nuestros queridos padres
+        </p>
+      </div>
+      
+      <!-- 👔 SECCIÓN 1: PADRES DEL NOVIO -->
+      <div id="seccion-padres-novio" class="max-w-xl mx-auto">
+        <h2 class="font-charm text-xl sm:text-2xl text-[#C9A961] font-bold mb-2">
+          Padres del novio
+        </h2>
+        <div class="space-y-1">
+          <p class="font-charm text-xl sm:text-xl text-[#626a54]">Marcelino Quispe A.</p>
+          <p class="font-charm text-xl sm:text-xl text-[#626a54]">Carmen Pérez G.</p>
+        </div>
+      </div>
+
+      <!-- 👗 SECCIÓN 2: PADRES DE LA NOVIA -->
+      <div id="seccion-padres-novia" class="pt-6 max-w-xl mx-auto">
+        <h2 class="font-charm text-xl sm:text-2xl text-[#C9A961] font-bold mb-2">
+          Padres de la novia
+        </h2>
+        <div class="space-y-1">
+          <p class="font-charm text-xl sm:text-xl text-[#626a54]">Aniceto Felipes M.</p>
+          <p class="font-charm text-xl sm:text-xl text-[#626a54]">Altagracia Espinoza A.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- 🌸 Adorno floral derecho - CENTRADO VERTICALMENTE -->
+    <div class="absolute right-0 top-1/2 -translate-y-1/2 w-16 pointer-events-none -mr-6 sm:-mr-7 md:-mr-8" id="adorno-der">
+      <img 
+        src="/imagenes/Hojas.webp" 
+        alt="Adorno floral derecho" 
+        class="w-full h-auto object-contain" 
+      />
+    </div>
+    
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 ANIMACIONES CON GSAP                                     -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+  import { entrada } from "../scripts/entrada";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#texto-bendicion",
+      start: "top 90%",
+      pasos: [
+        ["#texto-bendicion", "arriba"],
+        ["#adorno-izq", "izq"],
+        ["#adorno-der", "der"],
+        ["#seccion-padres-novio", "izq"],
+        ["#seccion-padres-novia", "der"],
+      ],
+    });
+  });
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎨 ESTILOS CSS                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* Mejoras de legibilidad */
+  h2 {
+    letter-spacing: 0.05em;
+  }
+
+  /* Efecto suave en el texto de bendición */
+  #texto-bendicion p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  /* Ajustes responsivos */
+  @media (max-width: 640px) {
+    section {
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
+    }
+  }
+</style>

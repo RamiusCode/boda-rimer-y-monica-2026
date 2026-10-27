@@ -1,0 +1,145 @@
+---
+// FloresAbajo.astro
+---
+
+<section class="relative text-black w-full py-8 pb-0 px-0">
+
+    <div class="w-full mx-auto relative z-10 px-0">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- 📝 SECCIÓN 1: TEXTO "TE ESPERAMOS" ARRIBA                   -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <div class="relative w-full text-center mb-4 md:mb-16 px-4" id="texto-esperamos-container">
+            <h2
+                class="font-great-vibes text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#8b7355] tracking-wide"
+                id="texto-esperamos"
+            >
+                Te esperamos
+            </h2>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- 🌸 CONTENEDOR DE FLORES Y ANILLOS (POSICIÓN RELATIVA)      -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <div class="relative w-full px-0" id="flores-anillos-container">
+            
+            <!-- 🌸 FLORES ABAJO PEGADAS AL BORDE -->
+            <div class="relative w-full flex justify-between items-end px-0" id="flores-abajo-container">
+                <!-- Flores izquierda abajo -->
+                <div id="flores-abajo-izq" class="w-36 sm:w-40 md:w-48 lg:w-56 xl:w-64 flex-shrink-0">
+                    <img
+                        src="/imagenes/FloresIzquierdaAbajo.webp"
+                        alt="Flores izquierda abajo"
+                        class="w-full h-auto object-contain block"
+                    />
+                </div>
+
+                <!-- Flores derecha abajo -->
+                <div id="flores-abajo-der" class="w-36 sm:w-40 md:w-48 lg:w-56 xl:w-64 flex-shrink-0">
+                    <img
+                        src="/imagenes/FloresDerechaAbajo.webp"
+                        alt="Flores derecha abajo"
+                        class="w-full h-auto object-contain block"
+                    />
+                </div>
+            </div>
+
+            <!-- 💍 ANILLOS CENTRADOS (POSICIÓN ABSOLUTA SOBRE LAS FLORES) -->
+            <div 
+                class="absolute left-0 right-0 top-0 flex justify-center items-center z-50" 
+                id="anillos-final"
+                style="top: 20px;"
+            >
+                <img
+                    src="/imagenes/Anillos.webp"
+                    alt="Anillos de boda"
+                    class="w-[100px] h-auto sm:w-[120px] md:w-[140px] lg:w-[160px] object-contain"
+                />
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+  import { entrada } from "../scripts/entrada";
+  import { gsap } from "gsap";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    entrada({
+      trigger: "#texto-esperamos-container",
+      pasos: [
+        ["#texto-esperamos", "arriba"],
+        ["#flores-abajo-izq", "izq"],
+        ["#flores-abajo-der", "der"],
+        ["#anillos-final", "centro"],
+      ],
+      alMostrar: () => {
+        gsap.to("#anillos-final", { rotation: 5, duration: 3, ease: "sine.inOut", yoyo: true, repeat: -1 });
+      },
+    });
+  });
+</script>
+
+<style>
+    /* Transición suave en hover del texto */
+    #texto-esperamos {
+        transition: all 0.4s ease;
+    }
+
+    #texto-esperamos:hover {
+        transform: scale(1.05);
+        text-shadow: 0 4px 15px rgba(139, 115, 85, 0.4);
+    }
+
+    /* Anillos perfectamente centrados - SIN EFECTOS HOVER */
+    #anillos-final {
+        pointer-events: none; /* Sin interacción */
+    }
+
+    #anillos-final img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    /* Asegurar que las flores lleguen hasta abajo sin espacio */
+    #flores-abajo-container {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    #flores-abajo-container img {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    /* Eliminar cualquier padding */
+    section {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    /* Ajuste responsive para posición de anillos */
+    @media (max-width: 640px) {
+        #anillos-final {
+            top: 10px !important;
+        }
+    }
+
+    @media (min-width: 768px) {
+        #anillos-final {
+            top: 30px !important;
+        }
+    }
+
+    @media (min-width: 1024px) {
+        #anillos-final {
+            top: 40px !important;
+        }
+    }
+</style>

@@ -1,0 +1,238 @@
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- ⏰ COMPONENTE CONTADOR - CUENTA REGRESIVA PARA LA BODA      -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+
+<section class="py-4 md:py-16 relative overflow-hidden">
+  <!-- Fondo elegante con gradiente -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#f5f9f0]/40 via-[#faf8f5]/20 to-[#f5f9f0]/40 z-0"></div>
+
+  <div class="max-w-6xl mx-auto relative px-4">
+    
+    <!-- 💍 TEXTO SUPERIOR - FUERA DEL CARD -->
+    <div class="text-center mb-4 sm:mb-6" id="texto-superior">
+      <h3 class="font-great-vibes text-2xl sm:text-3xl md:text-4xl lg:text-4xl text-[#C9A961]">
+        Falta para nuestra boda
+      </h3>
+    </div>
+
+    <!-- CONTENEDOR DEL CARD Y FLORES -->
+    <div class="relative">
+      
+      <!-- 🍃 FLORES LATERALES IZQUIERDA - ALINEADAS CON EL CARD -->
+      <div class="absolute left-0 top-1/2 -translate-y-1/2 w-12 sm:w-16 md:w-20 lg:w-24 pointer-events-none z-0 -ml-6 sm:-ml-8 md:-ml-12" id="hoja-lateral-izq">
+        <img src="/imagenes/FloresLaterales.webp" alt="Flores izquierda" class="w-full h-auto object-contain transform -scale-x-100" />
+      </div>
+
+      <!-- 🍃 FLORES LATERALES DERECHA - ALINEADAS CON EL CARD -->
+      <div class="absolute right-0 top-1/2 -translate-y-1/2 w-12 sm:w-16 md:w-20 lg:w-24 pointer-events-none z-0 -mr-6 sm:-mr-8 md:-mr-12" id="hoja-lateral-der">
+        <img src="/imagenes/FloresLaterales.webp" alt="Flores derecha" class="w-full h-auto object-contain" />
+      </div>
+      
+      <!-- CARD CONTENEDOR PRINCIPAL -->
+      <div class="relative bg-white/95 backdrop-blur-sm rounded-2xl sm:rounded-3xl border-2 border-[#C9A961]/30 py-6 sm:py-8 md:py-10 lg:py-12 px-4 sm:px-8 md:px-12 lg:px-16 z-10 max-w-xs sm:max-w-2xl md:max-w-2xl lg:max-w-4xl mx-auto" id="card-contador">
+        
+        <!-- ⏰ CONTADOR ELEGANTE EN FILA -->
+        <div class="relative" id="contador-container">
+          
+          <!-- Contador en fila -->
+          <div class="flex items-center justify-center gap-2 sm:gap-3 md:gap-6 lg:gap-8">
+            
+            <!-- DÍAS -->
+            <div class="flex flex-col items-center grupo-numero">
+              <div class="font-charm text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-none numero-elegante" id="dias">00</div>
+              <div class="text-xs sm:text-base md:text-lg lg:text-xl text-[#626a54] uppercase tracking-wide font-charm mt-1 sm:mt-2 md:mt-3 font-bold">Días</div>
+            </div>
+
+            <!-- Separador elegante -->
+            <div class="flex flex-col items-center gap-1 sm:gap-2 mb-4 sm:mb-6 md:mb-8 separador-elegante">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+            </div>
+
+            <!-- HORAS -->
+            <div class="flex flex-col items-center grupo-numero">
+              <div class="font-charm text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-none numero-elegante" id="horas">00</div>
+              <div class="text-xs sm:text-base md:text-lg lg:text-xl text-[#626a54] uppercase tracking-wide font-charm mt-1 sm:mt-2 md:mt-3 font-bold">Horas</div>
+            </div>
+
+            <!-- Separador elegante -->
+            <div class="flex flex-col items-center gap-1 sm:gap-2 mb-4 sm:mb-6 md:mb-8 separador-elegante">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+            </div>
+
+            <!-- MINUTOS -->
+            <div class="flex flex-col items-center grupo-numero">
+              <div class="font-charm text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-none numero-elegante" id="minutos">00</div>
+              <div class="text-xs sm:text-base md:text-lg lg:text-xl text-[#626a54] uppercase tracking-wide font-charm mt-1 sm:mt-2 md:mt-3 font-bold">Minutos</div>
+            </div>
+
+            <!-- Separador elegante -->
+            <div class="flex flex-col items-center gap-1 sm:gap-2 mb-4 sm:mb-6 md:mb-8 separador-elegante">
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+              <div class="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-gradient-to-br from-[#C9A961] to-[#d4af37] shadow-lg"></div>
+            </div>
+
+            <!-- SEGUNDOS -->
+            <div class="flex flex-col items-center grupo-numero">
+              <div class="font-charm text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold leading-none numero-elegante" id="segundos">00</div>
+              <div class="text-xs sm:text-base md:text-lg lg:text-xl text-[#626a54] uppercase tracking-wide font-charm mt-1 sm:mt-2 md:mt-3 font-bold">Segundos</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎬 SCRIPTS Y ANIMACIONES                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<script>
+  import { gsap } from "gsap";
+  import { entrada } from "../scripts/entrada";
+
+  if (typeof window !== 'undefined') {
+    document.addEventListener("DOMContentLoaded", () => {
+      console.log("⏰ Iniciando contador elegante...");
+
+      // 🎯 FECHA DEL EVENTO: sábado 21 de Noviembre 2026
+      const fechaEvento = new Date("2026-11-21T18:00:00").getTime();
+
+      // ⏰ FUNCIÓN DEL CONTADOR
+      function actualizarContador() {
+        const ahora = new Date().getTime();
+        const diferencia = fechaEvento - ahora;
+
+        if (diferencia > 0) {
+          const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+          const horas = Math.floor((diferencia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutos = Math.floor((diferencia % (1000 * 60 * 60)) / (1000 * 60));
+          const segundos = Math.floor((diferencia % (1000 * 60)) / 1000);
+
+          const diasEl = document.getElementById("dias");
+          const horasEl = document.getElementById("horas");
+          const minutosEl = document.getElementById("minutos");
+          const segundosEl = document.getElementById("segundos");
+
+          if (diasEl) diasEl.textContent = String(dias).padStart(2, "0");
+          if (horasEl) horasEl.textContent = String(horas).padStart(2, "0");
+          if (minutosEl) minutosEl.textContent = String(minutos).padStart(2, "0");
+          if (segundosEl) segundosEl.textContent = String(segundos).padStart(2, "0");
+        } else {
+          const diasEl = document.getElementById("dias");
+          const horasEl = document.getElementById("horas");
+          const minutosEl = document.getElementById("minutos");
+          const segundosEl = document.getElementById("segundos");
+
+          if (diasEl) diasEl.textContent = "00";
+          if (horasEl) horasEl.textContent = "00";
+          if (minutosEl) minutosEl.textContent = "00";
+          if (segundosEl) segundosEl.textContent = "00";
+        }
+      }
+
+      actualizarContador();
+      setInterval(actualizarContador, 1000);
+
+      // ✨ ENTRADA AL BAJAR
+      entrada({
+        trigger: "#card-contador",
+        pasos: [
+          ["#texto-superior", "arriba"],
+          ["#hoja-lateral-izq", "izq"],
+          ["#hoja-lateral-der", "der"],
+          ["#card-contador", "abajo"],
+        ],
+      });
+
+      // 🍃 ANIMACIONES CONTINUAS ELEGANTES
+      
+      // Movimiento suave de flores
+    //  gsap.to("#hoja-lateral-izq", {
+    //     y: -8,
+    //     rotation: -5,
+    //     duration: 3,
+    //     ease: "sine.inOut",
+    //     yoyo: true,
+    //     repeat: -1,
+    //     delay: 1,
+    //   }); 
+
+      // gsap.to("#hoja-lateral-der", {
+      //   y: -8,
+      //   rotation: 5,
+      //   duration: 3,
+      //   ease: "sine.inOut",
+      //   yoyo: true,
+      //   repeat: -1,
+      //   delay: 1,
+      // });
+
+      // Separadores pulsando
+      gsap.to(".separador-elegante", {
+        scale: 1.3,
+        opacity: 0.6,
+        duration: 2,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.2,
+      });
+
+      // Resplandor sutil en números
+      gsap.to(".numero-elegante", {
+        textShadow: "0 0 20px rgba(201, 169, 97, 0.5), 0 4px 8px rgba(201, 169, 97, 0.3)",
+        duration: 3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        stagger: 0.4,
+      });
+
+      console.log("⏰✨ ¡Contador elegante activado!");
+    });
+  }
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- 🎨 ESTILOS CSS                                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<style>
+  /* Números con gradiente dorado brillante */
+  .numero-elegante {
+    background: linear-gradient(135deg, #C9A961 0%, #d4af37 50%, #C9A961 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 4px 12px rgba(201, 169, 97, 0.3);
+    transition: all 0.4s ease;
+  }
+
+  /* Hover en los grupos de números */
+  .grupo-numero:hover .numero-elegante {
+    transform: scale(1.1);
+    filter: drop-shadow(0 8px 16px rgba(201, 169, 97, 0.4));
+  }
+
+  /* Separadores elegantes */
+  .separador-elegante {
+    opacity: 0.7;
+    transition: all 0.3s ease;
+  }
+
+  /* Animación de resplandor en el card principal */
+  #card-contador {
+    transition: all 0.3s ease;
+  }
+
+  #card-contador:hover {
+    box-shadow: 0 20px 60px rgba(201, 169, 97, 0.25);
+    transform: translateY(-5px);
+  }
+</style>
